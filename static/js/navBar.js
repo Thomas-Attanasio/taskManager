@@ -6,10 +6,20 @@ export const displayNavBar = () => {
             <hr>
 
             <li>
-                <a class="navBarLink" href="/">Home</a>
+                <a class="navBarLink" href="/">Your Tasks</a>
             </li>
 
             <hr>
         </ul>
     `;
+
+
+    const currentPath = window.location.pathname;
+    const links = document.querySelectorAll('.navBarLink');
+
+    links.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        }
+    });
 }
