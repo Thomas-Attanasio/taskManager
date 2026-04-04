@@ -3,13 +3,13 @@ export const displayNavBar = () => {
 
     navBarContainer.innerHTML = `
         <ul>
-            <hr>
+            <li><hr></li>
 
             <li>
                 <a class="navBarLink" href="/">Your Tasks</a>
             </li>
 
-            <hr>
+            <li><hr></li>
         </ul>
     `;
 

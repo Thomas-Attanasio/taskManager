@@ -16,21 +16,25 @@ body {
 .container {
     background-color: #1e1f21;
     color: #ffffff;
+    width: 1100px;
+    height: 700px;
     border-radius: 15px;
     display: flex;
-    gap: 30px;
 }
 
 #navBarContainer {
+    width: 200px;
     background-color: #333;
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 #navBarContainer ul {
+    width: 100%;
+    padding: 0;
     list-style-type: none;
 }
 
@@ -39,9 +43,19 @@ body {
 }
 
 #navBarContainer a {
+    width: 100%;
     color: #ffffff;
+    padding: 20px 0;
+    display: block;
+    text-align: center;
     text-decoration: none;
-    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+#navBarContainer hr {
+    border: 0;
+    border-top: 1px solid #444;
+    margin: 10px 20px;
 }
 
 #navBarContainer a:hover {
@@ -49,16 +63,31 @@ body {
 }
 
 .navBarLink.active {
+    background-color: rgba(135, 206, 250, 0.05);
     color: #87cefa;
-    border-left: 4px solid #87cefa;
-    padding-left: 10px;
+    border-left: 5px solid #87cefa;
+    padding-left: 0;
     transition: all 0.3s ease;
 }
 
 .mainContent {
     padding: 40px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
-.headerContainer h1 {
+.headerTitle h1 {
+    width: 100%;
+    margin: 0;
     text-align: center;
+}
+
+.headerDivider {
+    background-color: #444;
+    width: 95%;
+    border: 0;
+    height: 1px;
+    margin: 15px auto 30px auto;
 }
