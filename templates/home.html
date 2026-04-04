@@ -5,3 +5,22 @@
 {% block extra_css %}{% endblock %}
 
 {% block header_title %}Your Tasks{% endblock %}
+
+{% block content %}
+    <div class="newTaskFormContainer">
+        <form action="/" method="POST">
+            <input type="text" name="taskInput">
+            <button type="submit">Add a new task</button>
+        </form>
+
+        <hr>
+
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% else %}
+                <p>There is no task yet!</p>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
