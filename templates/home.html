@@ -18,7 +18,7 @@
 
     <hr>
 
-    <div class="showTaskContainer" {% if not tasks %}isEmpty{% endif %} id="showTaskContainer">
+    <div class="showTaskContainer {% if not tasks %}isEmpty{% endif %}" id="showTaskContainer">
         {% if tasks %}
             <ul>
                 {% for task in tasks %}
