@@ -21,6 +21,10 @@
             <ul>
                 {% for task in tasks %}
                     <li>- {{ task }}</li>
+
+                    <form action="{{ url_for('delete', taskId=loop.index0) }}" method="POST">
+                        <button type="submit" id="removeTaskButton"><i class="fas fa-minus"></i></button>
+                    </form>
                 {% endfor %}
             </ul>
         {% else %}
