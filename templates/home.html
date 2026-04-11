@@ -11,18 +11,16 @@
 {% block content %}
     <div class="newTaskFormContainer">
         <form action="/" method="POST">
-            <input type="text" name="taskInput">
-            <button type="submit" id="nweTaskButton">Add a new task</button>
+            <input type="text" name="taskInput" placeholder="Enter your new task...">
+            <button type="submit" id="newTaskButton"><i class="fas fa-plus"></i></button>
         </form>
     </div>
-
-    <hr>
 
     <div class="showTaskContainer {% if not tasks %}isEmpty{% endif %}" id="showTaskContainer">
         {% if tasks %}
             <ul>
                 {% for task in tasks %}
-                    <li>{{ task }}</li>
+                    <li>- {{ task }}</li>
                 {% endfor %}
             </ul>
         {% else %}
