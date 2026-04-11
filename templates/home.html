@@ -2,7 +2,9 @@
 
 {% block title %}Your Tasks | Task Manager{% endblock %}
 
-{% block extra_css %}{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="../static/css/home.css">
+{% endblock %}
 
 {% block header_title %}Your Tasks{% endblock %}
 
@@ -10,17 +12,23 @@
     <div class="newTaskFormContainer">
         <form action="/" method="POST">
             <input type="text" name="taskInput">
-            <button type="submit">Add a new task</button>
+            <button type="submit" id="nweTaskButton">Add a new task</button>
         </form>
+    </div>
 
-        <hr>
+    <hr>
 
-        <ul>
-            {% for task in tasks %}
-                <li>{{ task }}</li>
-            {% else %}
+    <div class="showTaskContainer" {% if not tasks %}isEmpty{% endif %} id="showTaskContainer">
+        {% if tasks %}
+            <ul>
+                {% for task in tasks %}
+                    <li>{{ task }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="noTaskYet">
                 <p>There is no task yet!</p>
-            {% endfor %}
-        </ul>
+            </div>
+        {% endif %}
     </div>
 {% endblock %}
